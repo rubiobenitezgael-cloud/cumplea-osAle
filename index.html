@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorpresa de Cumpleaños 🎉</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- PANTALLA INICIAL DINÁMICA DE IMPACTO -->
+    <div id="landing-screen" class="full-screen-section countdown-theme">
+        <div id="countdown-bg-particles" class="bg-particles-container"></div>
+
+        <div id="balloons-wrapper" class="balloons-container hidden">
+            <div class="balloon red"></div>
+            <div class="balloon blue"></div>
+            <div class="balloon yellow"></div>
+            <div class="balloon green"></div>
+            <div class="balloon pink"></div>
+        </div>
+
+        <div class="landing-content">
+            <div class="countdown-badge">✨ Cuenta Regresiva Especial ✨</div>
+            <h1 id="landing-title" class="glow-title">Faltan pocos días...</h1>
+            <p id="landing-subtitle">Estamos preparando una sorpresa inolvidable</p>
+            
+            <div id="countdown-box" class="countdown-glass-grid">
+                <div class="time-card">
+                    <div class="card-inner"><span id="days" class="neon-number">00</span></div>
+                    <small>Días</small>
+                </div>
+                <div class="time-card">
+                    <div class="card-inner"><span id="hours" class="neon-number">00</span></div>
+                    <small>Horas</small>
+                </div>
+                <div class="time-card">
+                    <div class="card-inner"><span id="minutes" class="neon-number">00</span></div>
+                    <small>Minutos</small>
+                </div>
+                <div class="time-card">
+                    <div class="card-inner"><span id="seconds" class="neon-number">00</span></div>
+                    <small>Segundos</small>
+                </div>
+            </div>
+
+            <div class="landing-actions">
+                <button id="btn-guest-entry" class="btn-guest-shortcut">
+                    <span>💌</span> Soy invitado / Quiero dejar un detalle
+                </button>
+                
+                <button id="btn-start-birthday" class="btn-start-main hidden">
+                    ¡Descubrir mi sorpresa! ✨
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE CONTRASEÑA / CUMPLEAÑERA -->
+    <div id="password-screen" class="full-screen-section identity-theme hidden">
+        <div class="identity-box">
+            <h2>¡Hola Cumpleañera! 🎉</h2>
+            <p>Ingresa tu clave secreta para desbloquear tus regalos:</p>
+            
+            <form id="password-form">
+                <input type="password" id="birthday-password" placeholder="Tu NIP o palabra secreta..." required style="padding: 12px 18px; border-radius: 20px; border: none; outline: none; width: 100%; text-align: center; font-size: 1rem; margin-bottom: 12px; background: rgba(255,255,255,0.9); color: #1e1b4b;">
+                <button type="submit" class="btn-identity girl" style="width: 100%; padding: 12px; font-size: 1rem;">Validar Clave 🔓</button>
+                <p id="password-error" style="color: #fca5a5; font-size: 0.85rem; margin-top: 8px;" class="hidden">❌ Clave incorrecta, intenta de nuevo.</p>
+            </form>
+            <button id="btn-back-to-landing" style="background: none; border: none; color: #cbd5e1; margin-top: 15px; cursor: pointer; font-size: 0.9rem;">← Volver</button>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE INSTRUCCIONES Y GUÍA PARA INVITADOS -->
+    <div id="guest-instructions-screen" class="full-screen-section guest-form-theme hidden">
+        <div class="guest-card-box" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
+            <h2>📖 Guía y Propósito del Detalle</h2>
+            <p style="margin-bottom: 15px; font-size: 0.9rem;">Sabemos que ella es una persona muy dada a dar detalles increíbles, así que quisimos crear algo a su altura: un espacio eterno que pueda revisar y conservar para siempre.</p>
+            
+            <div class="instructions-list">
+                <div class="instruction-item">
+                    <span class="instruction-icon">🎡</span>
+                    <div>
+                        <strong>¿A dónde irá tu aportación?</strong>
+                        <p>Se integrará dinámicamente en su <em>Ruleta de la Fortuna</em> con efectos interactivos y sorpresas únicas.</p>
+                    </div>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">💡</span>
+                    <div>
+                        <strong>¿Qué puedes agregar?</strong>
+                        <p>Elige entre anécdotas con fotos y música, cartas con estampilla postal, canciones dedicadas o retos divertidos.</p>
+                    </div>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🔒</span>
+                    <div>
+                        <strong>Privacidad Total (100% Confidencial)</strong>
+                        <p>Tus textos, imágenes y canciones son privados. No se guardan en ningún dispositivo público; todo se procesa de forma segura y <strong>solo la cumpleañera podrá verlos</strong>.</p>
+                    </div>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🔄</span>
+                    <div>
+                        <strong>Un regalo vivo y permanente</strong>
+                        <p>La página permanecerá activa de forma permanente y <strong>recibirá actualizaciones futuras</strong> por si deseas agregar más detalles en fechas importantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button id="btn-back-from-instructions" class="btn-identity" style="flex: 1; background: #64748b; color: white; padding: 12px; font-size: 0.95rem; border-radius: 50px;">Volver</button>
+                <button id="btn-proceed-to-form" class="btn-identity guest" style="flex: 1; padding: 12px; font-size: 0.95rem; border-radius: 50px;">¡Entendido, a redactar! 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORMULARIO DE INVITADOS -->
+    <div id="guest-form-screen" class="full-screen-section guest-form-theme hidden">
+        <div class="guest-card-box" style="max-height: 90vh; overflow-y: auto;">
+            <h2>✨ Deja tu huella en el regalo</h2>
+            <p>Elige qué tipo de detalle quieres dejarle:</p>
+            
+            <form id="guest-memory-form">
+                <div class="form-group">
+                    <label for="guest-name">Tu nombre o apodo:</label>
+                    <input type="text" id="guest-name" required placeholder="Ej. Tu amigo/a favorito/a">
+                </div>
+
+                <div class="form-group">
+                    <label for="detail-category">Elige la categoría de tu detalle:</label>
+                    <select id="detail-category" style="width: 100%; padding: 10px 15px; border-radius: 12px; border: 1px solid #cbd5e1; font-family: 'Poppins', sans-serif; font-size: 0.95rem; background: #f8fafc; outline: none;">
+                        <option value="memory">📸 Anécdota o Recuerdo (con foto, efectos y canción opcional)</option>
+                        <option value="letter">💌 Carta Postal Tradicional (con sobre animado, estampilla e imagen)</option>
+                        <option value="song">🎵 Canción Dedicada (Spotify / YouTube)</option>
+                        <option value="challenge">🎯 Reto o Desafío Express (para la ruleta)</option>
+                    </select>
+                    <small id="category-description" style="display: block; margin-top: 6px; color: #64748b; font-style: italic;">
+                        Comparte una historia o chiste interno inolvidable, añade una foto con efecto y opcionalmente una canción que te recuerde al momento.
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label id="label-message" for="guest-message">Tu anécdota o recuerdo:</label>
+                    <textarea id="guest-message" rows="3" required placeholder="Escribe algo especial o divertido..."></textarea>
+                </div>
+
+                <!-- SECCIÓN 1: ANÉCDOTA -->
+                <div id="section-memory-options">
+                    <div class="form-group">
+                        <label for="guest-image">📸 Sube una foto del recuerdo (opcional):</label>
+                        <input type="file" id="guest-image" accept="image/*" style="font-size: 0.85rem; background: #f8fafc;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Efecto visual para la foto:</label>
+                        <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 5px; font-size: 0.85rem; color: #334155;">
+                            <label style="font-weight: normal; cursor: pointer;">
+                                <input type="radio" name="photo-effect" value="normal" checked> 📸 Imagen normal (Estándar)
+                            </label>
+                            <label style="font-weight: normal; cursor: pointer;">
+                                <input type="radio" name="photo-effect" value="puzzle"> 🧩 Rompecabezas misterioso (¡Para que ella lo resuelva!)
+                            </label>
+                            <label style="font-weight: normal; cursor: pointer;">
+                                <input type="radio" name="photo-effect" value="emojis"> ✨ Lluvia de emojis flotantes
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group hidden" id="emoji-input-container">
+                        <label for="guest-custom-emoji">Elige el emoji que flotará:</label>
+                        <input type="text" id="guest-custom-emoji" value="💖" maxlength="2" style="text-align: center; font-size: 1.2rem; width: 80px;">
+                    </div>
+
+                    <div class="form-group" style="margin-top: 15px; border-top: 1px dashed #cbd5e1; padding-top: 12px;">
+                        <label for="memory-song-url">🎵 Canción que acompaña el recuerdo (opcional):</label>
+                        <input type="url" id="memory-song-url" placeholder="https://open.spotify.com/track/... o YouTube" style="font-size: 0.9rem;">
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 2: CARTA POSTAL -->
+                <div id="section-letter-options" class="hidden">
+                    <div class="form-group">
+                        <label>Elige una estampilla postal para tu carta:</label>
+                        <div style="display: flex; gap: 15px; margin-top: 8px; justify-content: center;">
+                            <label style="cursor: pointer; text-align: center; font-size: 0.85rem;">
+                                <input type="radio" name="postal-stamp" value="✈️" checked> <br><span style="font-size: 1.8rem;">✈️</span><br>Viajera
+                            </label>
+                            <label style="cursor: pointer; text-align: center; font-size: 0.85rem;">
+                                <input type="radio" name="postal-stamp" value="❤️"> <br><span style="font-size: 1.8rem;">❤️</span><br>Amor
+                            </label>
+                            <label style="cursor: pointer; text-align: center; font-size: 0.85rem;">
+                                <input type="radio" name="postal-stamp" value="⭐"> <br><span style="font-size: 1.8rem;">⭐</span><br>Estelar
+                            </label>
+                            <label style="cursor: pointer; text-align: center; font-size: 0.85rem;">
+                                <input type="radio" name="postal-stamp" value="👑"> <br><span style="font-size: 1.8rem;">👑</span><br>Real
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="letter-image">📸 Adjuntar una foto a la carta (opcional):</label>
+                        <input type="file" id="letter-image" accept="image/*" style="font-size: 0.85rem; background: #f8fafc;">
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 3: CANCIÓN DEDICADA -->
+                <div id="section-song-options" class="hidden">
+                    <div class="form-group">
+                        <label for="guest-song-url">🎵 Enlace de Spotify o YouTube:</label>
+                        <input type="url" id="guest-song-url" placeholder="https://open.spotify.com/track/... o YouTube">
+                    </div>
+
+                    <div class="form-group">
+                        <label>¿Cómo quieres que se muestre la canción?</label>
+                        <div style="display: flex; gap: 15px; margin-top: 5px; font-size: 0.85rem; color: #334155;">
+                            <label style="font-weight: normal; cursor: pointer;">
+                                <input type="radio" name="song-display" value="player" checked> Solo Reproductor / Audio
+                            </label>
+                            <label style="font-weight: normal; cursor: pointer;">
+                                <input type="radio" name="song-display" value="cover"> Portada Visual + Audio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 4: RETO -->
+                <div id="section-challenge-options" class="hidden">
+                    <div class="form-group">
+                        <label for="challenge-reward">🎁 ¿Qué premio o condición tendrá si lo cumple?</label>
+                        <input type="text" id="challenge-reward" placeholder="Ej. Reclámalo en persona por un café ☕">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button type="button" id="btn-back-to-instructions" class="btn-identity" style="background: #cbd5e1; color: #334155; padding: 12px; font-size: 0.95rem; border-radius: 50px; border: none; cursor: pointer;">← Guía</button>
+                    <button type="submit" class="btn-submit-guest" style="margin-top: 0; flex: 1;">Enviar a la Ruleta 🚀</button>
+                </div>
+            </form>
+
+            <div id="guest-success-msg" class="hidden" style="padding: 20px 0; text-align: center;">
+                <div style="font-size: 3.5rem; margin-bottom: 10px;">🎉</div>
+                <h3 style="color: #059669; font-size: 1.4rem; margin-bottom: 8px;">¡Detalle guardado con éxito!</h3>
+                <p style="color: #475569; font-size: 0.95rem; margin-bottom: 25px;">Tu dedicatoria se ha registrado de forma privada y ya forma parte de su sorpresa.De verdad, 
+                    <strong>muchísimas gracias por formar parte de esta dinámica tan especial</strong>. Tu detalle no es solo un recuerdo, es una forma maravillosa 
+                    de hacerla sumamente feliz en su día y de dejar una huella imborrable en su corazón. ❤️</p>
+                
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button type="button" id="btn-add-another" class="btn-identity guest" style="padding: 12px 20px; font-size: 0.9rem; border-radius: 50px;">➕ Agregar otro detalle</button>
+                    <button type="button" id="btn-back-home" class="btn-identity" style="background: #64748b; color: white; padding: 12px 20px; font-size: 0.9rem; border-radius: 50px; border: none; cursor: pointer;">🏠 Volver a la portada</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL (MENU DE SORPRESAS) -->
+    <main>
+        <section id="surprise-menu" class="full-screen-section menu-theme hidden">
+            <div class="menu-container">
+                <h2>Elige tu primer destino misterioso... 🎁</h2>
+                <p class="subtitle">No sabes qué hay detrás de cada una, ¡así que déjate sorprender!</p>
+
+                <div class="mystery-grid">
+                    <div class="mystery-card" data-surprise="1">
+                        <div class="icon">💌</div>
+                        <h3>Opción Misteriosa 1</h3>
+                        <p>???</p>
+                    </div>
+                    <div class="mystery-card" data-surprise="2">
+                        <div class="icon">🎶</div>
+                        <h3>Opción Misteriosa 2</h3>
+                        <p>???</p>
+                    </div>
+                    <div class="mystery-card" data-surprise="3">
+                        <div class="icon">🎡</div>
+                        <h3>Opción Misteriosa 3</h3>
+                        <p>???</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenedor Dinámico de Sorpresas -->
+        <div id="surprise-content-container" class="full-screen-section hidden-surprise"></div>
+
+        <!-- Pantalla de Suspenso Intermedia -->
+        <div id="suspense-screen" class="suspense-overlay hidden">
+            <div class="suspense-box">
+                <h3>Mmm... Espera un segundo 🤔</h3>
+                <p id="suspense-text">¿Estás lista para la siguiente sorpresa?</p>
+                <button id="btn-next-surprise" class="btn-suspense">¡Sí, estoy lista! ✨</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
