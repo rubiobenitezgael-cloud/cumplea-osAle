@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const suspenseScreen = document.getElementById('suspense-screen');
     const btnNextSurprise = document.getElementById('btn-next-surprise');
 
-    const SECRET_PASSWORD = "25"; // Clave secreta
+    const SECRET_PASSWORD = "241005"; // Clave secreta
     
     // MODO DE PRUEBAS ACTIVO
-    const BIRTHDAY_DATE = new Date(2025, 0, 1); 
+    const BIRTHDAY_DATE = new Date(2026, 10, 15); 
 
     const categoryDescriptions = {
         memory: "Comparte una historia o chiste interno inolvidable, añade una foto con efecto y opcionalmente una canción que te recuerde al momento.",
